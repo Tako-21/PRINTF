@@ -6,14 +6,14 @@
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 03:31:45 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/05/21 03:40:51 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/05/21 05:07:50 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_parsing.h"
 #include "ft_utils.h"
-#include "ft_idformat.h"
-#include "ft_idformat2.h"
+#include "ft_convert.h"
+#include "ft_convert2.h"
 
 void	*ft_idformat(char c)
 {

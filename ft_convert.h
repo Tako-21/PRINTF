@@ -1,5 +1,5 @@
-#ifndef __FT_ID_FORMAT__H
-#define __FT_ID_FORMAT__H
+#ifndef __FT_CONVERT__H
+#define __FT_CONVERT__H
 
 #include "ft_utils.h"
 #include <stdarg.h>

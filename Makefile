@@ -2,9 +2,9 @@ NAME = libftprintf.a
 
 CC = gcc
 
-SRCS = ft_utils.c ft_printf.c
+SRCS = ft_utils.c ft_printf.c ft_idformat.c ft_idformat2.c
 
-OBJS  =			${OBJS:.c=.o}
+OBJS  =			${SRCS:.c=.o}
 
 CFLAGS = -Wall -Werror -Wextra
 
