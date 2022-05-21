@@ -1,6 +1,8 @@
 #ifndef __PARSING__H
 #define __PARSING__H
 
-void	*ft_idformat(char c);
+#include "ft_utils.h"
+
+pf	ft_idformat(char c);
 
 #endif

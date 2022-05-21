@@ -4,9 +4,9 @@
 #include "ft_utils.h"
 #include <stdarg.h>
 
-void	ft_printc(char c);
-void	ft_prints(char *str);
-void	ft_printp(char *str);
-void	ft_printd(char *str);
+int	ft_printc(va_list);
+int	ft_prints(va_list);
+int	ft_printp(va_list);
+int	ft_printd(va_list);
 
 #endif

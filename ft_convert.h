@@ -4,10 +4,10 @@
 #include "ft_utils.h"
 #include <stdarg.h>
 
-void	ft_printi(char c);
-void	ft_printu(char *str);
-void	ft_printx(char *str);
-void	ft_printX(char *str);
-void	ft_printprc(char *str);
+int	ft_printi(va_list);
+int	ft_printu(va_list);
+int	ft_printx(va_list);
+int	ft_printX(va_list);
+int	ft_printprc(va_list);
 
 #endif

@@ -6,33 +6,33 @@
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 03:43:15 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/05/21 04:45:57 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/05/21 19:33:02 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_convert.h"
 
-void	ft_printi(char c)
+int	ft_printi(va_list ap)
 {
-
+	return (1);
 }
 
-void	ft_printu(char *str)
+int	ft_printu(va_list ap)
 {
-
+	return (1);
 }
 
-void	ft_printx(char *str)
+int	ft_printx(va_list ap)
 {
-
+	return (1);
 }
 
-void	ft_printX(char *str)
+int	ft_printX(va_list ap)
 {
-
+	return (1);
 }
 
-void	ft_printpr(char *str)
+int	ft_printprc(va_list ap)
 {
-
+	return (1);
 }
