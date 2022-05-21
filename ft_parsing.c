@@ -1,27 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_parsing.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/20 15:40:28 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/05/21 03:50:42 by mmeguedm         ###   ########.fr       */
+/*   Created: 2022/05/21 03:31:45 by mmeguedm          #+#    #+#             */
+/*   Updated: 2022/05/21 03:40:51 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_parsing.h"
+#include "ft_utils.h"
 #include "ft_idformat.h"
 #include "ft_idformat2.h"
 
-
-int ft_printf(const char *str, ...)
+void	*ft_idformat(char c)
 {
-	va_list ap;
+	// while (str)
+	// 	LE_tableau[(*str == '7')]("GG", "YOLO", NULL);
+	pf *table;
 
-	va_start(ap, str);
-	while (*str)
-	{
-		if (ft_idformat(*str))
-		str++;
-	}
+	table = (pf[128]){
+	(char *)0,
+	['c'] = ft_printc,
+	['s'] = ft_prints,
+	['p'] = ft_printp,
+	['d'] = ft_printd,
+	['i'] = ft_printi,
+	['u'] = ft_printu,
+	['x'] = ft_printx,
+	['X'] = ft_printX,
+	['%'] = ft_printprc
+	};
+	return (table[(int)c]);
 }

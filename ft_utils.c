@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/20 15:40:28 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/05/21 03:50:42 by mmeguedm         ###   ########.fr       */
+/*   Created: 2022/05/20 22:59:53 by mmeguedm          #+#    #+#             */
+/*   Updated: 2022/05/21 00:34:53 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_idformat.h"
-#include "ft_idformat2.h"
+#include "ft_utils.h"
+#include <unistd.h>
 
-
-int ft_printf(const char *str, ...)
+void	ft_putchar(char c)
 {
-	va_list ap;
+	write(1, &c, 1);
+}
 
-	va_start(ap, str);
+void	ft_putstr(char *str)
+{
+	int	i;
+
+	i = 0;
 	while (*str)
 	{
-		if (ft_idformat(*str))
+		ft_putchar(*str);
 		str++;
 	}
 }
