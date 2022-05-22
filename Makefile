@@ -2,16 +2,20 @@ NAME = libftprintf.a
 
 CC = gcc
 
-SRCS = ft_utils.c ft_printf.c ft_convert.c ft_convert2.c ft_parsing.c
+SRCS = srcs/ft_utils.c \
+		srcs/ft_printf.c \
+		srcs/ft_convert.c \
+		srcs/ft_convert2.c \
+		srcs/ft_parsing.c
 
-# OBJS  =			$(SRCS:.c=.o)
+# CFLAGS = -Wall -Werror -Wextra
 
-CFLAGS = -Wall -Werror -Wextra
+OBJS  =			$(SRCS:.c=.o)
 
 all : $(NAME)
 
 $(NAME) :		$(OBJS)
-				$(CC) $(SRCS)
+				$(CC) $(OBJS) -o printf
 # ar -rcs $(NAME) $(OBJS)
 clean :
 				rm -rf $(OBJS)

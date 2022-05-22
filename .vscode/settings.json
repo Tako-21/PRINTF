@@ -1,6 +1,7 @@
 {
 	"files.associations": {
 		"ft_idformat2.h": "c",
-		"ft_convert2.h": "c"
+		"ft_convert2.h": "c",
+		"includes.h": "c"
 	}
 }
