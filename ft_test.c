@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include "ft_utils.h"
 
 int	main(void)
 {
@@ -15,7 +14,8 @@ int	main(void)
 
 	// table['c'] = 21;
 	// char c = 'a';
-	char s = 'a';
-	void *p = s;
-	printf("table : %c\n", *p);
+	char	*s = "abc";
+	int		b = 21;
+	int a = printf("%s%d", s, b);
+	printf(" \nvaleur de retour de printf : %d\n", a);
 }

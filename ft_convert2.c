@@ -1,4 +1,4 @@
-#include "includes.h"
+#include "ft_printf.h"
 
 int	ft_printc(va_list ap)
 {
@@ -6,6 +6,7 @@ int	ft_printc(va_list ap)
 
 	out = (char)va_arg(ap, int);
 	ft_putchar(out);
+	return (1);
 }
 
 int	ft_prints(va_list ap)
@@ -14,6 +15,7 @@ int	ft_prints(va_list ap)
 
 	out = (char *)va_arg(ap, char *);
 	ft_putstr(out);
+	return (1);
 }
 
 int	ft_printp(va_list ap)
@@ -27,16 +29,20 @@ int	ft_printp(va_list ap)
 	addr = (unsigned long long int)va_arg(ap, unsigned long long int);
 	if (!addr)
 		ft_putstr("nil");
-	ft_putnbrbase(addr, base);
+	ft_putnbrbase((unsigned long long int)addr, base);
+	return (1);
 }
+
+#include <stdio.h>
 
 int	ft_printd(va_list ap)
 {
 	char *base;
-	long int nb;
+	int nb;
 
 	base = "0123456789";
 
-	nb = (long int)va_arg(ap, long int);
+	nb = (int)va_arg(ap, int);
 	ft_putnbrbase(nb, base);
+	return (1);
 }
