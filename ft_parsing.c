@@ -6,7 +6,7 @@
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 03:31:45 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/05/23 10:59:52 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/05/23 15:29:09 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 // #include "ft_convert.h"
 // #include "ft_convert2.h"
 
-#include "ft_printf.h"
+#include "printf.h"
 
 t_pf	ft_idformat(char c)
 {
@@ -30,7 +30,7 @@ t_pf	ft_idformat(char c)
 	['i'] = ft_printi,
 	['u'] = ft_printu,
 	['x'] = ft_printx,
-	['X'] = ft_printX,
+	['X'] = ft_printupx,
 	['%'] = ft_printprc
 	};
 	return (table[(int)c]);

@@ -6,7 +6,7 @@
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 11:05:55 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/05/23 11:08:32 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/05/23 15:30:53 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 
+enum e_type { type_unsigned_int, type_long_int };
 int			ft_printf(const char *str, ...);
 
 /* CREATING A FUNCTION POINTER */
@@ -26,7 +27,7 @@ typedef int(*t_pf)(va_list);
 int			ft_printi(va_list arg);
 int			ft_printu(va_list arg);
 int			ft_printx(va_list arg);
-int			ft_printupX(va_list arg);
+int			ft_printupx(va_list arg);
 int			ft_printprc(va_list arg);
 int			ft_printc(va_list arg);
 int			ft_prints(va_list arg);
@@ -39,7 +40,7 @@ t_pf		ft_idformat(char c);
 /* UTILS FUNCTIONS */
 int			ft_putchar(char c);
 int			ft_putstr(char *str);
-size_t		ft_putnbrbase(long long int nb, char *base);
+size_t		ft_putnbrbase(enum e_type type, long long int nb, char *base);
 int			ft_checkbase(char	*base);
 int			ft_strlen(char *str);
 #endif

@@ -6,11 +6,11 @@
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 15:40:28 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/05/23 11:04:05 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/05/23 15:29:18 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "printf.h"
 
 int	ft_printf(const char *str, ...)
 {
@@ -41,15 +41,25 @@ int	ft_printf(const char *str, ...)
 
 // int main(void)
 // {
-// 	// char 	*a = "Quel monde merveilleux";
-// 	// int	a = 15564;
-// 	int	res;
-// 	int res2;
+// 	char	*s = NULL;
 
-// 	res = 0;
-// 	res = ft_printf("%%shd");
+// 	printf("printf    : %d\n", printf("%p", s));
+// 	printf("ft_printf : %d\n", ft_printf("%p", s));
+// }
+
+// #include <limits.h>
+// #include <stdio.h>
+
+// int	main(void)
+// {
+// 	int res1, res2;
+
+// 	res1 = 0;
+// 	res2 = 0;
+
+// 	res1 = printf("%lu", LONG_MAX);
 // 	printf("\n");
-// 	res2 = printf("%%asf");
-
-// 	printf("\nft_printf : %d\nprintf :%d\n", res, res2);
+// 	res2 = ft_printf("%u", LONG_MAX);
+// 	printf("\n");
+// 	printf("printf res     : %d\nft _printf res : %d\n", res1, res2);
 // }
