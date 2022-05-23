@@ -25,9 +25,9 @@ int			ft_printd(va_list arg);
 t_pf		ft_idformat(char c);
 
 /* UTILS FUNCTIONS */
-void		ft_putchar(char c);
-void		ft_putstr(char *str);
-void		ft_putnbrbase(long long int nb, char *base);
+int			ft_putchar(char c);
+int			ft_putstr(char *str);
+void		ft_putnbrbase(long long int nb, char *base, int *err);
 int			ft_checkbase(char	*base);
 int			ft_strlen(char *str);
 #endif

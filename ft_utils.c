@@ -6,7 +6,7 @@
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 22:59:53 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/05/22 20:01:42 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/05/23 09:52:19 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,22 @@ int	ft_strlen(char *str)
 	return(i);
 }
 
-void	ft_putchar(char c)
+int	ft_putchar(char c)
 {
-	write(1, &c, 1);
+	int	err;
+
+	err = write(1, &c, 1);
+	return (err);
 }
 
-void	ft_putstr(char *str)
+#include <stdio.h>
+
+int	ft_putstr(char *str)
 {
-	(void)write(1, str, ft_strlen(str));
+	int	err;
+
+	err = write(1, str, ft_strlen(str));
+	return (err);
 }
 
 int	ft_checkbase(char	*base)
@@ -58,9 +66,10 @@ int	ft_checkbase(char	*base)
 	}
 	return (1);
 }
+
 #include <stdio.h>
 
-void	ft_putnbrbase(long long int nb, char *base)
+void	ft_putnbrbase(long long int nb, char *base, int *err)
 {
 	if (!ft_checkbase(base))
 		return ;
@@ -71,10 +80,9 @@ void	ft_putnbrbase(long long int nb, char *base)
 	}
 	if (nb >= (long long int)ft_strlen(base))
 	{
-		ft_putnbrbase(nb / ft_strlen(base), base);
-		ft_putnbrbase(nb % ft_strlen(base), base);
+		ft_putnbrbase(nb / ft_strlen(base), base, **err);
+		ft_putnbrbase(nb % ft_strlen(base), base, **err);
 	}
 	else
-		ft_putchar(base[nb % ft_strlen(base)]);
-
+		*err += ft_putchar(base[nb % ft_strlen(base)]);
 }

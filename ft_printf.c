@@ -6,7 +6,7 @@
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 15:40:28 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/05/22 20:01:29 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/05/23 09:15:33 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int ft_printf(const char *str, ...)
 
 	len = 0;
 	va_start(ap, str);
-	while (*str)
+	while (*str)	
 	{
 		if (*str == '%')
 		{
@@ -39,16 +39,14 @@ int ft_printf(const char *str, ...)
 
 #include <stdio.h>
 
-// int	main(void)
-// {
-// 	int nb = 42;
-
-// 	printf("Hello welcome in %d\n", nb);
-// 	ft_printf("Hello welcome in %d\n", nb);
-// }
-
-
 int main(void)
 {
-	ft_printf("%d", -2147483648);
+	char 	*a = "Quel monde merveilleux";
+	int	res, res2;
+
+	res = ft_printf("%p", &a);
+	printf("\n");
+	res2 = printf("%p", &a);
+
+	printf("\nft_printf : %d\nprintf :%d\n", res, res2);
 }
