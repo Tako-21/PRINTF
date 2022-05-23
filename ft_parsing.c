@@ -6,7 +6,7 @@
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 03:31:45 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/05/22 19:29:04 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/05/23 10:59:52 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,10 @@
 
 t_pf	ft_idformat(char c)
 {
-	// while (str)
-	// 	LE_tableau[(*str == '7')]("GG", "YOLO", NULL);
-	t_pf *table;
+	t_pf	*table;
 
 	table = (t_pf[128]){
-	NULL,
+		NULL,
 	['c'] = ft_printc,
 	['s'] = ft_prints,
 	['p'] = ft_printp,

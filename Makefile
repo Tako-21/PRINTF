@@ -8,7 +8,7 @@ SRCS = ft_utils.c \
 		ft_convert2.c \
 		ft_parsing.c
 
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -g3 -Wall -Werror -Wextra
 
 OBJS  =			$(SRCS:.c=.o)
 

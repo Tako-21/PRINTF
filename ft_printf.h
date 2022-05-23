@@ -1,11 +1,23 @@
-#ifndef __PRINTF__H
-#define __PRINTF__H
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   printf.h                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/23 11:05:55 by mmeguedm          #+#    #+#             */
+/*   Updated: 2022/05/23 11:08:32 by mmeguedm         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef PRINTF_H
+# define PRINTF_H
 
 # include <stdarg.h>
 # include <unistd.h>
 # include <stdlib.h>
 
-int ft_printf(const char *str, ...);
+int			ft_printf(const char *str, ...);
 
 /* CREATING A FUNCTION POINTER */
 typedef int(*t_pf)(va_list);
@@ -14,7 +26,7 @@ typedef int(*t_pf)(va_list);
 int			ft_printi(va_list arg);
 int			ft_printu(va_list arg);
 int			ft_printx(va_list arg);
-int			ft_printX(va_list arg);
+int			ft_printupX(va_list arg);
 int			ft_printprc(va_list arg);
 int			ft_printc(va_list arg);
 int			ft_prints(va_list arg);
@@ -27,7 +39,7 @@ t_pf		ft_idformat(char c);
 /* UTILS FUNCTIONS */
 int			ft_putchar(char c);
 int			ft_putstr(char *str);
-void		ft_putnbrbase(long long int nb, char *base, int *err);
+size_t		ft_putnbrbase(long long int nb, char *base);
 int			ft_checkbase(char	*base);
 int			ft_strlen(char *str);
 #endif

@@ -6,12 +6,9 @@
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 22:59:53 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/05/23 09:52:19 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/05/23 11:05:40 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-// #include "ft_utils.h"
-// #include <unistd.h>
 
 #include "ft_printf.h"
 
@@ -22,7 +19,7 @@ int	ft_strlen(char *str)
 	i = 0;
 	while (str[i])
 		i++;
-	return(i);
+	return (i);
 }
 
 int	ft_putchar(char c)
@@ -32,8 +29,6 @@ int	ft_putchar(char c)
 	err = write(1, &c, 1);
 	return (err);
 }
-
-#include <stdio.h>
 
 int	ft_putstr(char *str)
 {
@@ -51,12 +46,12 @@ int	ft_checkbase(char	*base)
 	i = 0;
 	if (ft_strlen(base) <= 1)
 		return (0);
-	while(base[i])
+	while (base[i])
 	{
 		if (base[i] == '-' || base[i] == '+')
 			return (0);
 		j = i + 1;
-		while(base[j])
+		while (base[j])
 		{
 			if (base[i] == base[j])
 				return (0);
@@ -67,22 +62,27 @@ int	ft_checkbase(char	*base)
 	return (1);
 }
 
-#include <stdio.h>
-
-void	ft_putnbrbase(long long int nb, char *base, int *err)
+size_t	ft_putnbrbase(long long int nb, char *base)
 {
+	size_t	count;
+
+	count = 0;
 	if (!ft_checkbase(base))
-		return ;
+		return (0);
 	if (nb < 0)
 	{
 		nb *= -1;
 		ft_putchar('-');
+		count = 1;
 	}
 	if (nb >= (long long int)ft_strlen(base))
 	{
-		ft_putnbrbase(nb / ft_strlen(base), base, **err);
-		ft_putnbrbase(nb % ft_strlen(base), base, **err);
+		return (ft_putnbrbase(nb / ft_strlen(base), base)
+			+ ft_putnbrbase(nb % ft_strlen(base), base));
 	}
 	else
-		*err += ft_putchar(base[nb % ft_strlen(base)]);
+	{
+		ft_putchar(base[nb % ft_strlen(base)]);
+		return (count + 1);
+	}
 }
